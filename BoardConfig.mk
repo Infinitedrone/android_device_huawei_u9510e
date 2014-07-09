@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from the proprietary version
-include vendor/huawei/u9510e/BoardConfigVendor.mk
-
 TARGET_SPECIFIC_HEADER_PATH := device/huawei/u9510e/include
 
 
@@ -41,18 +38,16 @@ TARGET_NO_BOOTLOADER := true
 
 TARGET_BOARD_PLATFORM := k3v2oem1
 TARGET_BOOTLOADER_BOARD_NAME := u9510e
+# Kernel Build
+TARGET_KERNEL_SOURCE := kernel/huawei/u9510
+TARGET_KERNEL_CONFIG := cm_u9510e_defconfig
 
-# boot image / kernel
+# boot image build
 BOARD_KERNEL_CMDLINE := console=ttyS0 vmalloc=384M k3v2_pmem=1 
 BOARD_KERNEL_PAGESIZE := 2048 
-TARGET_PREBUILT_KERNEL := device/huawei/u9510e/kernel
 
 TARGET_PROVIDES_INIT := true
 TARGET_PROVIDES_INIT_TARGET_RC := true
-#u9510e specific files
-#TARGET_KERNEL_SOURCE := kernel/huawei/srck3v2
-#TARGET_KERNEL_CONFIG := cm_u9510e_defconfig
-
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -60,7 +55,6 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/u9510e/bluetooth
 
 TARGET_NO_RADIOIMAGE := true
-
 
 # emmc partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -78,14 +72,13 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 
 #Graphics
-BOARD_EGL_CFG := device/huawei/hwu9510e/prebuilts/lib/egl/egl.cfg
+BOARD_EGL_CFG := device/huawei/u9510e/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 # HWComposer
 BOARD_USES_HWCOMPOSER := true
 # WebKit
 ENABLE_WEBGL := true
 TARGET_FORCE_CPU_UPLOAD := true
-
 
 # Wifi 
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
@@ -108,7 +101,7 @@ TARGET_PROVIDES_LIBAUDIO := true
 #BOARD_USES_AUDIO_LEGACY = true
 
 
-# RIL
+# Ril ## FIXED Me
 BOARD_RIL_CLASS :=../../../device/huawei/u9510e/ril/MateRIL.java
 
 
@@ -134,13 +127,14 @@ BOARD_MTP_DEVICE := "/dev/mtp_usb"
 BOARD_VOLD_MAX_PARTITIONS := 19
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+
 ###################################
 #
 ## Recovery - BEGIN
 #
 ###################################
 
-#TARGET_RECOVERY_INITRC := device/huawei/hwu9508/recovery/recovery.rc
+TARGET_RECOVERY_INITRC := device/huawei/u9508/recovery/recovery.rc
 TARGET_RECOVERY_FSTAB := device/huawei/u9510e/recovery/etc/recovery.fstab
 RECOVERY_FSTAB_VERSION := 2
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -149,8 +143,8 @@ BOARD_RECOVERY_HANDLES_MOUNT := true
 # RECOVERY_EXTEND_NANDROID_MENU 
 
 
-#TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-#BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 # to compile mmcutils
 BOARD_HAS_LARGE_FILESYSTEM := true
 
@@ -194,6 +188,8 @@ TW_CRYPTO_REAL_BLKDEV := "/dev/block/platform/hi_mci.1/by-name/userdata"
 #
 ###################################
 
+# inherit from the proprietary version
+include vendor/huawei/u9510e/BoardConfigVendor.mk
 
 TARGET_OTA_ASSERT_DEVICE := u9510e
 
