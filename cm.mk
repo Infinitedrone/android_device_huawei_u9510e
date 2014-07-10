@@ -28,7 +28,7 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, vendor/cm/config/themes_common.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/huawei/u9510e/u9510e.mk)
+#$(call inherit-product, device/huawei/u9510e/u9510e.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := cm_u9510e

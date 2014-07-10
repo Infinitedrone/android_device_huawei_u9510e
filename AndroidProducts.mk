@@ -14,5 +14,5 @@
 
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_u9510e.mk \
+    $(LOCAL_DIR)/u9510e.mk \
     $(LOCAL_DIR)/cm.mk
