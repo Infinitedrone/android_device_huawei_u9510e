@@ -33,10 +33,8 @@ $(call inherit-product, device/huawei/u9510e/u9510e.mk)
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := cm_u9510e
 PRODUCT_DEVICE := u9510e
-PRODUCT_BRAND := huawei
-PRODUCT_MODEL := U9510E
-PRODUCT_MANUFACTURER := HUAWEI
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=cm_u9510e BUILD_FINGERPRINT=huawei/u9510e:user/release-keys"
-PRIVATE_BUILD_DESC="u9510e-user Android 4.4 release-keys"
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=u9510e BUILD_FINGERPRINT=huawei/u9510e:user/release-keys"
+PRIVATE_BUILD_DESC="u9510e-user 4.3.1 test-keys"
 
