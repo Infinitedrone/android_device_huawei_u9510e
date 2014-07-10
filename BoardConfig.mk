@@ -39,7 +39,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := k3v2oem1
 TARGET_BOOTLOADER_BOARD_NAME := u9510e
 # Kernel Build
-TARGET_KERNEL_SOURCE := kernel/huawei/u9510
+TARGET_KERNEL_SOURCE := kernel/huawei/u9510e
 TARGET_KERNEL_CONFIG := cm_u9510e_defconfig
 
 # boot image build
